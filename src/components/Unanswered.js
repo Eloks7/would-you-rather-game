@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Question extends Component {
+class Unanswered extends Component {
     render() {
         return (
             <div>
-                Question
+                Unanswered
             </div>
         )
     }
 }
 
-export default Question;
+export default Unanswered;

@@ -1,11 +1,11 @@
-import { RECEIVE_TWEETS, ADD_QUESTION, SAVE_ANSWER } from "../actions/questions";
+import { RECEIVE_QUESTIONS, ADD_QUESTION, SAVE_ANSWER } from "../actions/questions";
 
 export default function questions (state = {}, action) {
     switch(action.type) {
-        case RECEIVE_TWEETS:
+        case RECEIVE_QUESTIONS:
             return {
                 ...state,
-                ...action.tweets
+                ...action.questions
             }
         case SAVE_ANSWER:
             const { authedUser, qid, answer } = action;
