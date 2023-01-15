@@ -43,14 +43,18 @@ class Questions extends Component {
     }
 }
 
-function mapStateToProps({ authedUser, questions, users }) {
-	const answeredIds = Object.keys(questions)
-		.filter((id) => users[authedUser].answers.hasOwnProperty(id))
+function mapStateToProps({ authedUser, users, questions }) {
+    // console.log(authedUser)
+    const answered = users[authedUser].answers;
+
+    const unansweredIds = Object.keys(questions)
+		.filter((id) => !answered.hasOwnProperty(id))
 		.sort((a, b) => questions[b].timestamp - questions[a].timestamp);
 
-	const unansweredIds = Object.keys(questions)
-		.filter((id) => !users[authedUser].answers.hasOwnProperty(id))
+	const answeredIds = Object.keys(questions)
+		.filter((id) => answered.hasOwnProperty(id))
 		.sort((a, b) => questions[b].timestamp - questions[a].timestamp);
+
 
 	return {
 		answeredIds,
