@@ -13,7 +13,7 @@ class Nav extends Component {
     const { authedUser, user } = this.props;
 
     return (
-      <div>
+      <div className='nav-container'>
         <nav className='nav'>
           <ul>
             <li>
@@ -32,7 +32,7 @@ class Nav extends Component {
               </NavLink>
             </li>
           </ul>
-          <div className='profile'>
+          <div className='profile-info'>
             {authedUser !== "" && <span>Hi <strong>{user}</strong></span>}
             <select onChange={(e) => (this.handleUserChange(e.target.value))}>
               <option value="" >Sign in</option>
