@@ -8,6 +8,7 @@ import Questions from './Questions';
 import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion';
 import QuestionPage from './QuestionPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component {
@@ -19,19 +20,21 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
-          {/* <LoadingBar /> */}
-          <div className="container">
+          <LoadingBar />
+          {loading === true
+          ? null
+          :<div className="container">
             <Nav />
             {/* {loading === true
             ? null
             : <Nav />} */}
-            {authedUser === ""
+            {(authedUser === null || authedUser === "")
               ? null
               : <div>
                   <Routes>
                     <Route exact path='/'><Questions /></Route>
                     <Route path='/new'><NewQuestion /></Route>
-                    <Route path='/leaderboard' element={<LeaderBoard />}/>
+                    <Route path='/leaderboard'><LeaderBoard /></Route>
                     <Route
                         path='/questions/:id'
                         render={({ match }) => (
@@ -40,7 +43,7 @@ class App extends Component {
                     />
                   </Routes>
                 </div>}
-          </div>
+          </div>}
         </Fragment>
       </Router>
     );
