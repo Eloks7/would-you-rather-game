@@ -7,7 +7,7 @@ class LeaderBoard extends Component {
     render() {
         return (
             <div>
-                <Card style={{ width: '32rem'}}>
+                <Card className='user' style={{ width: '26rem'}}>
                     {this.props.orderedUserIds.map((userId) => (
                         <User key={userId} id={userId} />
                     ))}
