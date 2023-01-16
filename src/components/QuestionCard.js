@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class QuestionCard extends Component {
     render() {
+        const { authorName, firstOption, id } = this.props;
         return (
-            <div>
-                <Card style={{ width: '18rem' }}>
+            <div style={{ display: 'inline' }}>
+                <Card style={{ width: '24rem', marginBottom: '32px', display: 'inline-block'}}>
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text style={{ fontWeight: 400, textDecoration: 'none' }}>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                        <Card.Title style={{ fontWeight: 500 }}>Would you rather</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted" style={{fontSize: '14px'}}>author {authorName}</Card.Subtitle>
+                        <Card.Text style={{ fontWeight: 500, textDecoration: 'none' }}>
+                            {firstOption} <br/> OR <br/>...
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Link to={`/questions/${id}`}><Button variant="primary">View Question</Button></Link>
                     </Card.Body>
                 </Card>
             </div>
@@ -22,4 +25,16 @@ class QuestionCard extends Component {
     }
 }
 
-export default QuestionCard;
+function mapStateToProps ({ authedUser, users, questions}, { id }) {
+    const authorId = questions[id].author;
+    const authorName = users[authorId].name;
+
+    const firstOption = questions[id].optionOne.text;
+
+    return {
+        authorName,
+        firstOption
+    }
+}
+
+export default connect(mapStateToProps)(QuestionCard);
