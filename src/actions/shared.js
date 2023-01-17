@@ -24,8 +24,9 @@ export function handleAddQuestion (question) {
     return (dispatch) => {
         return _saveQuestion(question)
             .then((formattedQuestion) => {
-                dispatch(addQuestion(formattedQuestion))
                 dispatch(addCreatedQuestion(formattedQuestion))
+                dispatch(addQuestion(formattedQuestion))
+                // dispatch(addCreatedQuestion(formattedQuestion))
             })
     }
 }
