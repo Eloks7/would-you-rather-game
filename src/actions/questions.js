@@ -10,10 +10,10 @@ export function receiveQuestions (questions) {
     }
 }
 
-export function addQuestion (question) {
+export function addQuestion (formattedQuestion) {
     return {
         type: ADD_QUESTION,
-        question,
+        formattedQuestion,
     }
 }
 
