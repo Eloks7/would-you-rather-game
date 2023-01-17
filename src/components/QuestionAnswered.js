@@ -13,8 +13,8 @@ class QuestionAnswered extends Component {
                 totalVotes,
                 userAnswer } = this.props;
         
-        const  optionOnePercent = firstOptionVotes > 0 ? (firstOptionVotes/totalVotes) * 100 : 0;
-        const  optionTwoPercent = (secondOptionVotes/totalVotes) * 100;
+        const  optionOnePercent = Math.floor(firstOptionVotes > 0 ? (firstOptionVotes/totalVotes) * 100 : 0);
+        const  optionTwoPercent = Math.floor((secondOptionVotes/totalVotes) * 100);
 
         return (
             <div>

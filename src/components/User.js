@@ -6,13 +6,27 @@ import { connect } from 'react-redux';
 
 class User extends Component {
     render() {
-        const { authorName, answeredLength, questionsLength, totalScore } = this.props;
+        const { authorName, answeredLength, questionsLength, totalScore, rank } = this.props;
+        let position = '';
+        switch (rank) {
+            case 1:
+                position = '1st';
+                break;
+            case 2:
+                position = '2nd';
+                break;
+            case 3:
+                position = '3rd';
+                break;
+            default:
+                position = "";
+        }
         return (
             <div className="user" style={{ display: 'inline', margin: 'auto' }}>
                 <Card style={{ width: '24rem', margin: '24px 0', display: 'inline-block'}}>
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
-                        <Card.Title style={{ fontWeight: 700, marginBottom: '20px' }}>{authorName}</Card.Title>
+                        <Card.Title style={{ fontWeight: 700, marginBottom: '20px' }}>{authorName} ({position})</Card.Title>
                         {/* <Card.Subtitle className="mb-2 text-muted" style={{fontSize: '14px'}}>author {authorName}</Card.Subtitle> */}
                         <Card.Text style={{ fontWeight: 400, textDecoration: 'none' }}>
                             Questions Answered: {answeredLength}

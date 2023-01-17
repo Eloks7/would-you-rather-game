@@ -5,11 +5,13 @@ import User from './User';
 
 class LeaderBoard extends Component {
     render() {
+        let rank = 0;
         return (
             <div>
                 <Card className='user' style={{ width: '26rem'}}>
                     {this.props.orderedUserIds.map((userId) => (
-                        <User key={userId} id={userId} />
+                        
+                        <User key={userId} id={userId} rank={rank += 1} />
                     ))}
                 </Card>
             </div>
