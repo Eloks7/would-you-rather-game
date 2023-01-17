@@ -11,9 +11,9 @@ export default function users (state = {}, action) {
             const { id, authedUser } = action;
             return {
                 ...state,
-                [authedUser]: {
-                    ...state.authedUser,
-                    questions: state.authedUser.questions.concat([id])
+                [action.authedUser]: {
+                    ...state[action.authedUser],
+                    questions: state[action.authedUser].questions.concat([id])
                 }
             }
         case SAVE_USER_ANSWER:
@@ -21,8 +21,8 @@ export default function users (state = {}, action) {
 
             return {
                 ...state,
-                [action.authedUser]: {
-                    ...state[action.authedUser],
+                [authedUser]: {
+                    ...state[authedUser],
                     answers: {
                         ...state[action.authedUser].answers,
                         [qid]: answer
