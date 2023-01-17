@@ -29,7 +29,10 @@ class App extends Component {
             ? null
             : <Nav />} */}
             {(authedUser === null || authedUser === "")
-              ? null
+              ? <div>
+                  <h2>Sign In</h2>
+                  <p>Sign in to enable app features</p>
+                </div>
               : <div>
                   <Routes>
                     <Route exact path='/'><Questions /></Route>
