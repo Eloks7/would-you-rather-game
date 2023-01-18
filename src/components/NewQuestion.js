@@ -52,29 +52,6 @@ class NewQuestion extends Component {
         return (
           <div>
             <h3 style={{ marginLeft: '16px'}}>New Question</h3>
-            {/* <form className='new-tweet' onSubmit={this.handleSubmit}>
-              <label>Option 1</label>
-              <textarea
-                placeholder="Enter option one"
-                value={optionOneText}
-                onChange={this.handleChangeOne}
-                className='textarea'
-                maxLength={150}
-              /><br/>
-              <textarea
-                placeholder="enter Option two"
-                value={optionTwoText}
-                onChange={this.handleChangeTwo}
-                className='textarea'
-                maxLength={150}
-              />
-              <button
-                className='btn'
-                type='submit'
-                disabled={optionOneText === '' || optionTwoText === ''}>
-                  Submit
-              </button>
-            </form> */}
             <Card className="m-3" style={{ width: '40rem', marginBottom: '16px', textAlign: 'left'}}>
 							<Card.Body>
 								<Form onSubmit={this.handleSubmit}>
