@@ -13,18 +13,6 @@ class Questions extends Component {
         const { answeredIds, unansweredIds} = this.props;
         return (
             <Fragment>
-                {/* <nav>
-                    <NavLink to='/unanswered' exact activeclassname='active'>
-                        Unanswered Questions
-                    </NavLink>
-                    <NavLink to='/answered' exact activeclassname='active'>
-                        Answered Questions
-                    </NavLink>
-                </nav>
-                <Routes>
-                    <Route path='/unanswered' exact element={<Unanswered />}/>
-                    <Route path='/answered' element={<Answered />}/>
-                </Routes> */}
                 <Tabs
                     defaultActiveKey="unanswered"
                     id="uncontrolled-tab-example"
