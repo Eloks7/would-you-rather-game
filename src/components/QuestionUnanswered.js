@@ -28,9 +28,7 @@ class QuestionUnanswered extends Component {
                         <Card.Body>
                             <Card.Title style={{ fontWeight: 500 }}>Would you rather</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted" style={{fontSize: '14px'}}>Select a preferred option</Card.Subtitle>
-                            {/* <Card.Text style={{ fontWeight: 500, textDecoration: 'none' }}>
-                                
-                            </Card.Text> */}
+
                             <Form onSubmit={(e) => this.handleSubmit(e, id)}>
                                 <Form.Check
                                     type='radio'
