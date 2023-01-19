@@ -9,7 +9,6 @@ class QuestionUnanswered extends Component {
 
     handleSubmit = (e, id) => {
         
-        // e.preventDefault();
         const answer = e.target.choice.value;
         const qid = id;
         e.preventDefault();
@@ -23,7 +22,6 @@ class QuestionUnanswered extends Component {
             <div>
                 <div style={{ display: 'inline' }}>
                     <Card style={{ width: '24rem', marginBottom: '32px', display: 'inline-block'}}>
-                        {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                         <Card.Header>{authorName} asks</Card.Header>
                         <Card.Body>
                             <Card.Title style={{ fontWeight: 500 }}>Would you rather</Card.Title>
@@ -52,7 +50,6 @@ class QuestionUnanswered extends Component {
                                 </Button>
                             </Form>
                             
-                            {/* <Button style={{ marginTop: '16px'}} variant="primary">Submit Answer</Button> */}
                         </Card.Body>
                     </Card>
                 </div>
