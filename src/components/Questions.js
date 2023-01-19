@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
-// import { Route, Switch as Routes  } from 'react-router-dom';
 import Answered from './Answered';
 import Unanswered from './Unanswered';
 import Tab from 'react-bootstrap/Tab';
