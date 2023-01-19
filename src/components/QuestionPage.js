@@ -8,7 +8,6 @@ class QuestionsPage extends Component {
         const { answered, id, doesNotExist } = this.props;
         return (
             <div>
-                {/* <h3>Would you rather ...</h3> */}
                 {!doesNotExist
                     ? <div>
                         <h2>Error 404</h2>
@@ -26,7 +25,6 @@ class QuestionsPage extends Component {
 
 function mapStateToProps({ users, questions, authedUser }, { id }) {
     
-    // const question = questions.id;
     const userAnswers = users[authedUser].answers;
 
     const answered = userAnswers.hasOwnProperty(id)
