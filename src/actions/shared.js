@@ -26,7 +26,6 @@ export function handleAddQuestion (question) {
             .then((formattedQuestion) => {
                 dispatch(addCreatedQuestion(formattedQuestion))
                 dispatch(addQuestion(formattedQuestion))
-                // dispatch(addCreatedQuestion(formattedQuestion))
             })
     }
 }
