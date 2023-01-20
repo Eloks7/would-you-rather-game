@@ -25,9 +25,6 @@ class App extends Component {
           ? null
           :<div className="container">
             <Nav />
-            {/* {loading === true
-            ? null
-            : <Nav />} */}
             {(authedUser === null || authedUser === "")
               ? <div>
                   <h2>Sign In</h2>
