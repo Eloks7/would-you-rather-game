@@ -23,16 +23,19 @@ export default function users (state = {}, action) {
         case SAVE_USER_ANSWER:
             const { answer, qid } = action;
 
-            return {
-                ...state,
-                [action.authedUser]: {
-                    ...state[action.authedUser],
-                    answers: {
-                        ...state[action.authedUser].answers,
-                        [qid]: answer
-                    }
-                }
-            }
+            // return {
+            //     ...state,
+            //     [action.authedUser]: {
+            //         ...state[action.authedUser],
+            //         answers: {
+            //             ...state[action.authedUser].answers,
+            //             [qid]: answer
+            //         }
+            //     }
+            // }
+            return produce(state, (draft) => {
+                draft[action.authedUser].answers[qid] = answer
+            })
         default:
             return state;
     }
